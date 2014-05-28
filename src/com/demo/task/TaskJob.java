@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component("taskJob")  
 public class TaskJob {
-	@Scheduled(cron = "0 0/59 11-12 * * ?") 
+	@Scheduled(cron = "0 0/59 14-23 * * ?") 
 	//@Scheduled(cron = "* * * * * ?") 
 	public void job(){
 		Date d = new Date();

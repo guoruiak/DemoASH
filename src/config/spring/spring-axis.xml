@@ -8,5 +8,4 @@
 	">
 	<bean id="applicationContext"
 		class="org.apache.axis2.extensions.spring.receivers.ApplicationContextHolder" />
-	<bean id="test" class="com.demo.manager.WebServiceImpl"></bean>
 </beans>

@@ -14,10 +14,14 @@
 		<property name="userDao" ref="userDao"></property>
 	</bean>
 	
+	<bean id="webService" class="com.demo.manager.WebServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
 	
 	
 	<!-- 此处为代理 -->
 	<bean name="userManager" parent="transactionProxy">
 		<property name="target" ref="userManagerBase"></property>
-	</bean>	
+	</bean>
 </beans>

@@ -3,7 +3,7 @@
 	<service name="service" scope="application">
 		<parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier
 		</parameter>
-		<parameter name="SpringBeanName">userManagerBase</parameter>
+		<parameter name="SpringBeanName">webService</parameter>
 		<messageReceivers>
 			<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-only"
 				class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
