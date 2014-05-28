@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serviceGroup>
-	<service name="service" targetNamespace="http://kaobian.iteye.com/" scope="application">
+	<service name="service" scope="application">
 		<parameter name="ServiceObjectSupplier">org.apache.axis2.extensions.spring.receivers.SpringAppContextAwareObjectSupplier
 		</parameter>
 		<parameter name="SpringBeanName">userManagerBase</parameter>
