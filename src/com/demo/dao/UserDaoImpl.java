@@ -25,6 +25,7 @@ public class UserDaoImpl implements IUserDao {
 		return (User)query.uniqueResult();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAllUser() {
 		
@@ -51,7 +52,6 @@ public class UserDaoImpl implements IUserDao {
 
 	@Override
 	public boolean updateUser(User user) {
-		
 		String hql = "update User u set u.userName = ?,u.age=? where u.id = ?";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.setString(0, user.getUserName());

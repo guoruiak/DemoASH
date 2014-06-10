@@ -2,13 +2,19 @@ package com.demo.web;
   
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.demo.entity.User;
 import com.demo.manager.IUserManager;
@@ -79,4 +85,23 @@ public class UserController {
             return "/error";  
         }  
     }  
+    
+	@RequestMapping(value = "upload-logo", method = RequestMethod.POST)
+	@ResponseBody
+	public void uploadLogo(MultipartHttpServletRequest request) {
+		try {
+			Iterator<String> itr = request.getFileNames();
+			MultipartFile file = request.getFile(itr.next());
+
+			//JsonLogo logo = new JsonLogo();
+			if (file.getBytes().length > 0) {
+				//logo.setImage(new String(Base64.encodeBase64(file.getBytes())));
+				System.out.println(new String(Base64.encodeBase64(file.getBytes())));
+			}
+			//return logo;
+		} catch (Exception e) {
+			// Handle exception if any
+		}
+		//return null;
+	}
 }  

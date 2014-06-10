@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component("taskJob")  
 public class TaskJob {
-	@Scheduled(cron = "0 0/59 14-23 * * ?") 
-	//@Scheduled(cron = "* * * * * ?") 
+	@Scheduled(cron = "0 0/59 14-23 * * ?") //似乎这个配置不太对。。
 	public void job(){
 		Date d = new Date();
 		System.out.println("tasking......." + d.toLocaleString());
